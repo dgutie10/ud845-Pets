@@ -16,8 +16,17 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="e252d25afa911e60d407229b93874f0e9e9133ee">
+        sha1="3a45961250449ea96950f23dbe16120642f4a208">
         <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8d5343b913423ed5b11408e828de6e1261d3f237\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_4067682239f5295410718684ed2c56cdcded9d1a\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -52,8 +61,17 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="f42fe37e61f6df45f8fb49bda6281ff562aff687">
+        sha1="666b77287098a111351416fe282deb3c0e564da1">
         <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ffee2addd05dadecb76a1dad5a29d3b152e12801\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_3536d8e51f290ff3fb9405d07aceed0ff99e71cd\classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -72,24 +90,6 @@
         revision="23.0.3"
         sha1="f62e763609f65e47dc6c498760a4accf02776788">
         <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.1.1_821f4280838e8aa7596afdb52dad064f0a455939\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="6d7d803871e3203465f71a163e7af104f807b446">
-        <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.1.1_4067682239f5295410718684ed2c56cdcded9d1a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.1.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="23.0.3"
-        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
-        <dex dex="C:\Users\diegog\AndroidStudioProjects\Udacity\ud845-Pets\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.1.1_3536d8e51f290ff3fb9405d07aceed0ff99e71cd\classes.dex" />
     </item>
 
 </items>
