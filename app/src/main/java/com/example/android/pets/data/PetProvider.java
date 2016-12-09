@@ -16,7 +16,7 @@ import com.example.android.pets.data.PetContract.PetEntry;
  * Created by diegog on 12/6/2016.
  */
 
-public class PetProvider extends ContentProvider {
+public class PetProvider extends ContentProvider  {
 
     private static final UriMatcher URI_MATCHER = new UriMatcher(UriMatcher.NO_MATCH);
     private static final int PETS = 100;
@@ -82,6 +82,9 @@ public class PetProvider extends ContentProvider {
             Log.e(LOG_TAG, "Failed to insert new row for " + uri);
             return null;
         }
+
+        getContext().getContentResolver().notifyChange(uri,null);
+
         return ContentUris.withAppendedId(uri, id);
     }
 
@@ -152,6 +155,8 @@ public class PetProvider extends ContentProvider {
             default:
                 throw new IllegalArgumentException("Cannot query unknown URI " + uri);
         }
+
+        cursor.setNotificationUri(getContext().getContentResolver(), uri);
 
         return cursor;
     }
