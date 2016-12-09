@@ -38,7 +38,16 @@ public class PetProvider extends ContentProvider {
     @Nullable
     @Override
     public String getType(Uri uri) {
-        return null;
+        final int match = URI_MATCHER.match(uri);
+
+        switch (match){
+            case PETS:
+                return PetEntry.CONTENT_LIST_TYPE;
+            case PET_ID:
+                return  PetEntry.CONTENT_LIST_TYPE;
+            default:
+                throw new IllegalArgumentException("Unknown URI "+ uri + " with match "+ match);
+        }
     }
 
     @Nullable
@@ -149,6 +158,23 @@ public class PetProvider extends ContentProvider {
 
     @Override
     public int delete(Uri uri, String selection, String[] selectionArgs) {
-        return 0;
+
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+
+        final int match = URI_MATCHER.match(uri);
+
+        switch (match){
+            case PETS:
+                return database.delete(PetEntry.TABLE_NAME,selection, selectionArgs);
+
+            case PET_ID:
+
+                selection =PetEntry._ID + "=?";
+                selectionArgs = new String[] {String.valueOf(ContentUris.parseId(uri))};
+                return database.delete(PetEntry.TABLE_NAME, selection, selectionArgs);
+            default:
+                throw new IllegalArgumentException("Cannot delete unknown URI "+ uri);
+        }
+
     }
 }
