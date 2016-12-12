@@ -1,6 +1,7 @@
 package com.example.android.pets;
 
 import android.app.LoaderManager;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.CursorLoader;
 import android.content.Intent;
@@ -14,7 +15,9 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.android.pets.data.PetContract.PetEntry;
 
@@ -54,6 +57,19 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
         mPetCursorAdapter =  new PetCursorAdapter(this, null);
         listView.setAdapter(mPetCursorAdapter);
 
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
+
+                Uri data = ContentUris.withAppendedId(PetEntry.CONTENT_URI, id);
+                intent.setData(data);
+
+                startActivity(intent);
+
+            }
+        });
+
         getLoaderManager().initLoader(PET_LOADER, null, this);
     }
 
@@ -68,6 +84,12 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
 
         Uri NewRowUri = getContentResolver().insert(PetEntry.CONTENT_URI, values);
         Log.v("CatalogActivity", "New row ID: "+ NewRowUri);
+    }
+
+    private void  deleteAllPets(){
+        int rowsDeleted = getContentResolver().delete(PetEntry.CONTENT_URI, null,null);
+        Toast.makeText(this,rowsDeleted+" rows deleted.",Toast.LENGTH_SHORT).show();
+        Log.v("CatalogActivity", rowsDeleted+" rows deleted.");
     }
 
     @Override
@@ -93,7 +115,7 @@ public class CatalogActivity extends AppCompatActivity implements LoaderManager.
                 return true;
             // Respond to a click on the "Delete all entries" menu option
             case R.id.action_delete_all_entries:
-                // Do nothing for now
+                deleteAllPets();
                 return true;
         }
         return super.onOptionsItemSelected(item);
